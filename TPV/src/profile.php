@@ -7,7 +7,7 @@
  $query = "SELECT 
 				* 
 			FROM 
-      categoria";
+      categorias";
 
 
 	$resultado = mysqli_query($con, $query ) or die

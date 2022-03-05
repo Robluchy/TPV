@@ -16,11 +16,11 @@
 
 
 echo ("<div class='flex place-content-center gap-10 pt-20 >");
-  echo (" <div class='my-1 px-1 w-full overflow-hidden sm:w-1/4 md:w-1/4 lg:w-1/5 xl:w-1/6'>");
+  echo (" <div class='my-1 px-1 w-12 overflow-hidden sm:w-12 md:w-12 lg:w-12 xl:w-12'>");
 
 while($columna = mysqli_fetch_array($resultado)){	
  
-	echo "<div class=' place-items-center'>
+	echo "<div>
 			<a href='categories.php?id=".$columna['id_categoria']."'>
 			<img class='w-40 shadow-lg shadow-black' src='".$columna["foto"]."'>
             </a><h1 class='text-xl text-center mt-6'>".$columna['nombre']."</h1>
