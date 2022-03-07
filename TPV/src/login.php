@@ -3,8 +3,9 @@
 ?>
 
 
-<div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="px-8 py-6 text-left bg-white shadow-2xl shadow-cyan-900 ">
+
+<div class="flex items-center justify-center min-h-screen ">
+    <div class="px-8 py-6 text-left bg-white shadow-2xl shadow-indigo-400">
         <h3 class="text-2xl font-bold text-center">Login to your account</h3>
         <form action="">
             <div class="mt-4">

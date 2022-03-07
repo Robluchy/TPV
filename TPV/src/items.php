@@ -15,7 +15,7 @@ $resultado = mysqli_query($con, $query) or die
 
 echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2'>"); 
             // <<-div para poner las fotos de los productos asi separarlos en dos bloques->>
-    echo ('<div class="order-2 sm:order-1 w-4/6 justify-self-center grid grid-rows-5 grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-12 ">');
+    echo ('<div class="order-2 sm:order-1 w-4/6 justify-self-center grid grid-rows-5 grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-10 mb-14 ">');
 
         while($rows = mysqli_fetch_array($resultado)){	
         
