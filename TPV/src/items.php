@@ -34,12 +34,10 @@ echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:gri
 
         $detalle = mysqli_real_escape_string($con ,$_GET["id"]);
 
-        $query2 = "SELECT 
-                        * 
-                    FROM 
-                        productos
-                        WHERE 
-                            id_producto=".$detalle;
+        $query2 = "SELECT id_producto, productos.nombre, cantidad, descripcion, precio, productos.foto, nombre_categoria 
+        FROM productos, categorias 
+        WHERE id_producto = '$detalle'
+        and productos.categoria = categorias.id_categoria";
 
         $resultado2 = mysqli_query($con,$query2);
 
@@ -94,7 +92,7 @@ echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:gri
                     </h2>
                     <div id="accordion-open-body-4" class="hidden" aria-labelledby="accordion-open-heading-4">
                       <div class="p-5 border border-gray-200 dark:border-gray-700 border-b-0 w-9/12 bg-gray-700 ">
-                        <p class="text-white">'.$rows["categoria"].'</p>
+                        <p class="text-white">'.$rows["nombre_categoria"].'</p>
                       </div>
                     </div>
         </div>');
@@ -103,7 +101,7 @@ echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:gri
 	    }
 
         echo(' <div class="pl-16 xl:pl-48 lg:pl-28 md:pl-12 sm:pl-6 mt-8 inline-flex rounded-md shadow-sm">
-            <a href="addp.php?id='.$detalle.'" aria-current="page" class="py-2 px-4 text-sm font-medium text-blue-700 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+            <a href="addp.php" aria-current="page" class="py-2 px-4 text-sm font-medium text-blue-700 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                 Add
             </a>
             <a href="modifyp.php?id='.$detalle.'" class="py-2 px-4 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">

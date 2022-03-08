@@ -31,3 +31,19 @@ echo ('
     );
 }
 ?>
+
+<?php
+if (isset($_POST['send'])) {
+
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $telefono = $_POST['telefono'];
+    $direccion = $_POST['direccion'];
+    $foto = $_POST['foto'];
+
+}
+    $query = "UPDATE clientes SET nombre='$nombre', apellido='$apellido', telefono='$telefono', direccion='$direccion', foto='$foto' WHERE id_cliente=". $_GET['id'];
+    $resultado = mysqli_query($con, $query ) or die
+    ("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
+
+?>

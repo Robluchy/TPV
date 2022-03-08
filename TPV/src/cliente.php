@@ -59,6 +59,7 @@ echo ("<div class='grid'>");  //
 
             <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
               <div class="p-5 border border-gray-700 border-b-0 bg-gray-700">
+              <p class="text-white">Last name: '.$rows["apellido"].'</p>
                 <p class="text-white">Telephone: '.$rows["telefono"].'</p>
                 <p class="text-white">Address: '.$rows["direccion"].'</p>
                 <p class="text-white">Entry date: '.$rows["fecha_alta"].'</p>
@@ -66,7 +67,7 @@ echo ("<div class='grid'>");  //
             </div>
 
             <div class="mt-4 pl-10 inline-flex rounded-md shadow-sm">
-            <a href="addcli.php?id='.$detalle.'" aria-current="page" class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-l-lg border">
+            <a href="addcli.php" aria-current="page" class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-l-lg border">
                 Add
             </a>
             <a href="modifycli.php?id='.$detalle.'" class="py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
