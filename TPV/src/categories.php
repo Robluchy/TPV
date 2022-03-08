@@ -22,7 +22,7 @@ while($columna = mysqli_fetch_array($resultado)){
  
 	echo "<div>
 			<a href='categories.php?id=".$columna['id_categoria']."'>
-			<img class='w-40 shadow-lg shadow-black' src='".$columna["foto"]."'>
+			<img class='w-40 shadow-lg shadow-yellow-500' src='".$columna["foto"]."'>
             </a><h1 class='text-xl text-center mt-6'>".$columna['nombre']."</h1>
 	</div>";	
 	}
@@ -30,7 +30,7 @@ while($columna = mysqli_fetch_array($resultado)){
 	
 	echo("</div>");	
 	
-    echo ("<div class='mx-48 mt-12'>");
+    echo ("<div class='justify-self-center mt-12'>");
 
         if(!isset($_GET["id"])) exit();
 
@@ -52,19 +52,29 @@ while($columna = mysqli_fetch_array($resultado)){
 	    }
         echo("</table>");
 
-        echo('<div class="pl-10 inline-flex rounded-md shadow-sm">
-        <a href="editcat.php?id='.$detalle.'" aria-current="page" class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-l-lg border">
-            Edit
+        echo('<div class=" mt-4 pl-10 inline-flex rounded-md shadow-sm">
+        <a href="addcat.php?id='.$detalle.'" aria-current="page" class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-l-lg border">
+            Add
         </a>
         <a href="modifycat.php?id='.$detalle.'" class="py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
             Modify
         </a>
 
-        <a class="py-2 px-4 text-sm font-medium  bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
+        <a class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
             Remove
         </a>
 
-        <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
+        
+    </div>
+</div>');
+
+?>
+
+
+
+
+
+<div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
         <div class="relative px-4 w-full max-w-md h-full md:h-auto">
         
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -84,12 +94,3 @@ while($columna = mysqli_fetch_array($resultado)){
                 </div>
             </div>
         </div>
-    </div>
-</div>');
-
-?>
-
-
-
-
-

@@ -1,81 +1,48 @@
-
 <?php
- include_once ('header.php');
- include_once ('conexion.php');
+include_once('header.php');
+include_once('conexion.php');
 
+?>
 
- $query = "SELECT 
-				* 
-			FROM 
-      categorias";
+<div class="flex flex-col">
 
+    <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
 
-	$resultado = mysqli_query($con, $query ) or die
-	("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
+      <div class="overflow-hidden shadow-md sm:rounded-lg">
 
+        <table class="min-w-full">
+          <thead class="bg-gray-50 dark:bg-gray-700">
+          <tr>
+            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                Name
+            </th>
+            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                Color
+            </th>
+          
+            <th scope="col" class="relative py-3 px-6">
+            <span class="sr-only">View</span>
+            </th>
+          </tr>
 
+          </thead>
 
-echo ("<div class='flex place-content-center gap-10 pt-20 >");
-  echo (" <div class='my-1 px-1 w-full overflow-hidden sm:w-1/4 md:w-1/4 lg:w-1/5 xl:w-1/6'>");
-
-while($columna = mysqli_fetch_array($resultado)){	
- 
-	echo "<div class='animate-bounce  duration-300 place-items-center'>
-			<a href='categories.php?id=".$columna['id_categoria']."'>
-			<img class='w-40 shadow-lg shadow-black' src='".$columna["foto"]."'>
-            </a><h1 class='text-xl text-center mt-6'>".$columna['nombre']."</h1>
-	</div>";	
-	}
-
-	
-	echo("</div>");	
-	
-    echo ("<div class='mx-48 mt-12'>");
-
-        if(!isset($_GET["id"])) exit();
-
-        $detalle = mysqli_real_escape_string($con ,$_GET["id"]);
-
-        $query2 = "SELECT 
-                        * 
-                    FROM 
-                        categorias
-                        WHERE 
-                            id_categoria=".$detalle;
-
-        $resultado2 = mysqli_query($con,$query2);
-
-        echo ("<table class='text-xl' >");
-        while($columna = mysqli_fetch_array($resultado2)){	
-    
-            echo ("<tr><td>Name of Category: </td><td class='italic font-bold'>".$columna['nombre']."</td></tr>");
-	    }
-        echo("</table>");
-        
-        ?>
-          <div class="mt-6">
-        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800">
-          <span class="relative px-5 py-2.5 transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-            Edit
-          </span>
-      </button>
-
-      <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-800">
-        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110  bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-           Modify 
-        </span>
-      </button>
-
-      <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800">
-        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 bg-transparent dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-            Remove
-        </span>
-      </button>
+         
+          <tbody>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                Apple MacBook Pro 17"
+            </td>
+           
+            <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                $2999
+            </td>
+            <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">View</a>
+            </td>
+          </tr>
+        </tbody>
+          </table>
+      </div>
     </div>
-
-	
-</div>	
-
-
-
-
+</div>
