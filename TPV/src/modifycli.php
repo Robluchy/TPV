@@ -52,6 +52,7 @@ if (isset($_POST['send'])) {
     $direccion = $_POST['direccion'];
     
     $query = "UPDATE clientes SET nombre='$nombre', apellido='$apellido', telefono='$telefono', direccion='$direccion' WHERE id_cliente=". $_GET['id'];
+   
     $resultado = mysqli_query($con, $query ) or die
     ("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
 

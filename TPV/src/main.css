@@ -599,10 +599,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.5rem;
 }
 
-.mb-20 {
-  margin-bottom: 5rem;
-}
-
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -1398,6 +1394,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .shadow-indigo-400 {
   --tw-shadow-color: #818cf8;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-blue-500 {
+  --tw-shadow-color: #3b82f6;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
