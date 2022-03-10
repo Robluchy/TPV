@@ -1,5 +1,6 @@
  <?php 
  include_once('conexion.php');
+ 
 $query = "DELETE FROM categorias WHERE id_categoria =". $_GET['id'];
 
 $resultado = mysqli_query($con, $query ) or die

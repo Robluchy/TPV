@@ -17,9 +17,6 @@
 
 <body>
 
-    <!-- menu de la pagina  -->
-
-
 <nav class="bg-white mb-1 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" class="flex"></a>
@@ -47,7 +44,7 @@
                     <a href="./admin/index.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Administrator</a>
                 </li>
                 <li>
-                    <a href=" <?php session_start(); session_destroy(); ?>" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                    <a href="logout.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                 </li>
             </ul>
         </div>
@@ -82,5 +79,6 @@
 <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
 
 <?php
+session_start();
   include_once('footer.php');
 ?> 

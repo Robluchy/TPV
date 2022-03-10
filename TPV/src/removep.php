@@ -1,4 +1,5 @@
 <?php 
+
  include_once('conexion.php');
 $query = "DELETE FROM productos WHERE id_producto =". $_GET['id'];
 
