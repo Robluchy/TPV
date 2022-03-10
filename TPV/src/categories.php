@@ -16,65 +16,58 @@
 
 
 echo ("<div class='flex place-content-center gap-10 pt-20 >");
-  echo (" <div class='my-1 px-1 w-12 overflow-hidden sm:w-12 md:w-12 lg:w-12 xl:w-12'>");
+    echo (" <div class='my-1 px-1 w-12 overflow-hidden sm:w-12 md:w-12 lg:w-12 xl:w-12'>");
 
-while($columna = mysqli_fetch_array($resultado)){	
- 
-	echo "<div>
-			<a href='categories.php?id=".$columna['id_categoria']."'>
-			<img class='w-40 shadow-lg shadow-yellow-500' src='".$columna["foto"]."'>
-            </a><h1 class='text-xl text-center mt-6'>".$columna['nombre_categoria']."</h1>
-	</div>";	
-	}
-
-	
-	echo("</div>");	
-	
-    echo ("<div class='justify-self-center mt-12'>");
-
-        if(!isset($_GET["id"])) exit();
-
-        $detalle = mysqli_real_escape_string($con ,$_GET["id"]);
-
-        $query2 = "SELECT 
-                        * 
-                    FROM 
-                        categorias
-                        WHERE 
-                            id_categoria=".$detalle;
-
-        $resultado2 = mysqli_query($con,$query2);
-
-        echo ("<table class='text-xl' >");
-        while($columna = mysqli_fetch_array($resultado2)){	
+    while($columna = mysqli_fetch_array($resultado)){	
     
-            echo ("<tr><td>Name of Category: </td><td class='italic font-bold'>".$columna['nombre_categoria']."</td></tr>");
-	    }
-        echo("</table>");
+    	echo "<div>
+    			<a href='categories.php?id=".$columna['id_categoria']."'>
+    			<img class='w-40 shadow-lg shadow-yellow-500' src='".$columna["foto"]."'>
+                </a><h1 class='text-xl text-center mt-6'>".$columna['nombre_categoria']."</h1>
+    	</div>";	
+    	}
 
-        echo('<div class=" mt-4 pl-10 inline-flex rounded-md shadow-sm">
-        <a href="addcat.php?id='.$detalle.'" aria-current="page" class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-l-lg border">
-            Add
-        </a>
-        <a href="modifycat.php?id='.$detalle.'" class="py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
-            Modify
-        </a>
+    
+    	echo("</div>");	
+    
+        echo ("<div class='justify-self-center mt-12'>");
 
-        <a class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
-            Remove
-        </a>
+            if(!isset($_GET["id"])) exit();
 
-        
+            $detalle = mysqli_real_escape_string($con ,$_GET["id"]);
+
+            $query2 = "SELECT 
+                            * 
+                        FROM 
+                            categorias
+                            WHERE 
+                                id_categoria=".$detalle;
+
+            $resultado2 = mysqli_query($con,$query2);
+
+            echo ("<table class='text-xl' >");
+            while($columna = mysqli_fetch_array($resultado2)){	
+            
+                echo ("<tr><td>Name of Category: </td><td class='italic font-bold'>".$columna['nombre_categoria']."</td></tr>");
+    	    }
+            echo("</table>");
+
+            echo('<div class=" mt-4 pl-10 inline-flex rounded-md shadow-sm">
+            <a href="addcat.php?id='.$detalle.'" aria-current="page" class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-l-lg border">
+                Add
+            </a>
+            <a href="modifycat.php?id='.$detalle.'" class="py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
+                Modify
+            </a>
+
+            <a class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
+                Remove
+            </a>
+
+
+        </div>
     </div>
-</div>');
-
-?>
-
-
-
-
-
-<div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
+    <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
         <div class="relative px-4 w-full max-w-md h-full md:h-auto">
         
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -93,4 +86,11 @@ while($columna = mysqli_fetch_array($resultado)){
                     <button  data-modal-toggle="popup-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100  rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">No, cancel</button>
                 </div>
             </div>
-        </div>
+        </div>');
+
+?>
+
+
+
+
+

@@ -15,7 +15,7 @@ $resultado = mysqli_query($con, $query) or die
 
 echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2'>"); 
             // <<-div para poner las fotos de los productos asi separarlos en dos bloques->>
-    echo ('<div class="order-2 sm:order-1 w-4/6 justify-self-center grid grid-rows-5 grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-10 mb-14 ">');
+    echo ('<div class="order-2 sm:order-1 w-4/6  justify-self-center grid grid-rows-5 grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-10 mb-14 ">');
 
         while($rows = mysqli_fetch_array($resultado)){	
         
@@ -101,14 +101,14 @@ echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:gri
 	    }
 
         echo(' <div class="pl-16 xl:pl-48 lg:pl-28 md:pl-12 sm:pl-6 mt-8 inline-flex rounded-md shadow-sm">
-            <a href="addp.php" aria-current="page" class="py-2 px-4 text-sm font-medium text-blue-700 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+            <a href="addp.php" aria-current="page" class="py-2 px-4 text-sm font-medium text-blue-700 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                 Add
             </a>
-            <a href="modifyp.php?id='.$detalle.'" class="py-2 px-4 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+            <a href="modifyp.php?id='.$detalle.'" class="py-2 px-4 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                 Modify
             </a>
 
-            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white " data-modal-toggle="popup-modal">
+            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white " data-modal-toggle="popup-modal">
                 Remove
             </a>
             <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">

@@ -36,9 +36,7 @@
             <button type="submit" name="send"  href="cliente.php" class="text-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Submit</button>
 
         </form>
-    </div>
-     '
-        );
+    </div>');
 }
 ?>
 
