@@ -55,7 +55,7 @@ if (isset($_POST['Login'])) {
       echo '<script>alert("Bienvenido");window.location = "index.php";</script>';    
   
     }else{
-      echo 	'document.querySelector("#logfail").style.display = "block"';
+      echo 	'<script>alert("error");window.location = "login.php";</script>';
       exit;
     }
   }

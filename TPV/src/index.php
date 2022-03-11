@@ -1,8 +1,7 @@
 <?php
-    session_start();
     include_once('header.php');
 ?>
-    <!-- cards con las categorias  -->
+
 
 <section class=" mt-20 grid xl:grid-cols-4 sm:grid-cols-none md:grid-cols-2 gap-4 my-28 pb-4 px-28 place-content-around ">
     
