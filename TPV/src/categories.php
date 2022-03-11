@@ -54,19 +54,14 @@ echo ("<div class='flex place-content-center gap-10 pt-20 >");
             echo("</table>");
 
             echo('<div class=" mt-4 pl-10 inline-flex rounded-md shadow-sm">
-            <a href="addcat.php?id='.$detalle.'" aria-current="page" class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-l-lg border">
-                Add
-            </a>
-            <a href="modifycat.php?id='.$detalle.'" class="py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
-                Modify
-            </a>
+                <a href="modifycat.php?id='.$detalle.'" class="rounded-l-lg py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
+                    Modify
+                </a>
 
-            <a class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
-                Remove
-            </a>
-
-
-        </div>
+                <a class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
+                    Remove
+                </a>
+            </div>
     </div>
     <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
         <div class="relative px-4 w-full max-w-md h-full md:h-auto">

@@ -1,13 +1,24 @@
 <?php
- include_once('header.php');
  include_once('conexion.php');
-
- 
-
-
 ?>
+<!DOCTYPE html >
 
+<html lang="en" class="font-mono bg-gradient-to-r from-indigo-800 to-fuchsia-900 ">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPV TFT</title>
+    <link rel="icon" href="./img/tft.png">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript.js"></script>
+    
+</head>
+
+<body>
 
 <div class="flex items-center justify-center min-h-screen ">
     <div class="px-8 py-6 text-left bg-white shadow-2xl shadow-indigo-400">
@@ -52,7 +63,7 @@ if (isset($_POST['Login'])) {
     $resultado = mysqli_query($con, $query ) or die("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
   
       if(mysqli_num_rows($resultado) > 0){
-      echo '<script>alert("Bienvenido");window.location = "index.php";</script>';    
+      echo '<script>alert("Bienvenido");window.location = "home.php";</script>';    
   
     }else{
       echo 	'<script>alert("error");window.location = "login.php";</script>';

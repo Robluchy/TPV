@@ -46,71 +46,66 @@ echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:gri
     
         echo ('<div id="accordion-open" data-accordion="open" class="ml-16 xl:ml-0 mg:pl-0 md:ml-0 sm:ml-10">
               
-                    <h2 id="accordion-open-heading-1">
-                        <button type="button" class="flex items-center justify-between p-5 w-9/12  font-medium border border-gray-200 dark:border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
-                        <span class="flex items-center"><img class="w-20 h-w-20 mr-3 border-2 border-double border-yellow-400" src="'.$rows["foto"].'"> ' .$rows["nombre"].'</span>
-                            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
-                    </h2>
-                    <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
-                      <div class="p-5 border border-gray-700 border-b-0 w-9/12  bg-gray-700">
-                        <p class="text-white">'.$rows["descripcion"].'</p>
-                      </div>
-                    </div>
-                        
-                    <h2 id="accordion-open-heading-2">
-                        <button type="button" class="flex items-center justify-between p-5 w-9/12 font-medium border border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
-                            <span class="flex items-center">Amount</span>
-                            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
-                    </h2>
-                    <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
-                      <div class="p-5 border border-gray-700 border-b-0 w-9/12 bg-gray-700">
-                        <p class="text-white">'.$rows["cantidad"].' in stock</p>
-                      </div>
-                    </div>
-
-
-                    <h2 id="accordion-open-heading-3">
-                        <button type="button" class="flex items-center justify-between p-5 w-9/12 font-medium border border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
-                          <span class="flex items-center">Price</span>
-                          <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
-                    </h2>
-                    <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
-                      <div class="p-5 border border-gray-700 border-b-0 w-9/12 bg-gray-700">
-                        <p class="text-white">'.$rows["precio"].'€</p>
-                      </div>
-                    </div>
-
-      
-                    <h2 id="accordion-open-heading-4">
-                        <button type="button" class="flex items-center justify-between p-5 w-9/12 font-medium border border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-4" aria-expanded="false" aria-controls="accordion-open-body-4">
-                            <span class="flex items-center">Categoty</span>
-                            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
-                    </h2>
-                    <div id="accordion-open-body-4" class="hidden" aria-labelledby="accordion-open-heading-4">
-                      <div class="p-5 border border-gray-200 dark:border-gray-700 border-b-0 w-9/12 bg-gray-700 ">
-                        <p class="text-white">'.$rows["nombre_categoria"].'</p>
-                      </div>
-                    </div>
-        </div>');
+                <h2 id="accordion-open-heading-1">
+                    <button type="button" class="flex items-center justify-between p-5 w-9/12  font-medium border border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
+                    <span class="flex items-center"><img class="w-20 h-w-20 mr-3 border-2 border-double border-yellow-400" src="'.$rows["foto"].'"> ' .$rows["nombre"].'</span>
+                        <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
+                  <div class="p-5 border border-gray-700 border-b-0 w-9/12  bg-gray-700">
+                    <p class="text-white">'.$rows["descripcion"].'</p>
+                  </div>
+                </div>
+                    
+                <h2 id="accordion-open-heading-2">
+                    <button type="button" class="flex items-center justify-between p-5 w-9/12 font-medium border border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
+                        <span class="flex items-center">Amount</span>
+                        <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
+                  <div class="p-5 border border-gray-700 border-b-0 w-9/12 bg-gray-700">
+                    <p class="text-white">'.$rows["cantidad"].' in stock</p>
+                  </div>
+                </div>
+                <h2 id="accordion-open-heading-3">
+                    <button type="button" class="flex items-center justify-between p-5 w-9/12 font-medium border border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
+                      <span class="flex items-center">Price</span>
+                      <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
+                  <div class="p-5 border border-gray-700 border-b-0 w-9/12 bg-gray-700">
+                    <p class="text-white">'.$rows["precio"].'€</p>
+                  </div>
+                </div>
+    
+                <h2 id="accordion-open-heading-4">
+                    <button type="button" class="flex items-center justify-between p-5 w-9/12 font-medium border border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 bg-gray-800" data-accordion-target="#accordion-open-body-4" aria-expanded="false" aria-controls="accordion-open-body-4">
+                        <span class="flex items-center">Categoty</span>
+                        <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </h2>
+                <div id="accordion-open-body-4" class="hidden" aria-labelledby="accordion-open-heading-4">
+                  <div class="p-5 border border-gray-700 border-b-0 w-9/12 bg-gray-700 ">
+                    <p class="text-white">'.$rows["nombre_categoria"].'</p>
+                  </div>
+                </div>
+            </div>');
 
 
 	    }
 
-        echo(' <div class="pl-16 xl:pl-48 lg:pl-28 md:pl-12 sm:pl-6 mt-8 inline-flex rounded-md shadow-sm">
-            <a href="addp.php" aria-current="page" class="py-2 px-4 text-sm font-medium text-blue-700 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-                Add
-            </a>
-            <a href="modifyp.php?id='.$detalle.'" class="py-2 px-4 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-                Modify
-            </a>
+        echo(' <div class="mt-4 inline-flex rounded-md shadow-sm pl-16 xl:pl-48 lg:pl-28 md:pl-12 sm:pl-6 ">
 
-            <a class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white " data-modal-toggle="popup-modal">
-                Remove
-            </a>
+        <a href="modifycat.php?id='.$detalle.'" class="rounded-l-lg py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
+            Modify
+        </a>
+
+        <a class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
+            Remove
+        </a>
             <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
             <div class="relative px-4 w-full max-w-md h-full md:h-auto">
             
