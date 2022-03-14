@@ -1,4 +1,5 @@
 <?php 
+session_start();
  include_once('conexion.php');
  
 $query = "DELETE FROM clientes WHERE id_cliente =". $_GET['id'];

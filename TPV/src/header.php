@@ -16,6 +16,36 @@
 </head>
 
 <body>
+<?php
+
+include_once("conexion.php");
+session_start();
+
+if (!isset($_SESSION['user'])) {
+
+
+
+  $nombre = $_POST['nombre'];
+
+  $pass = $_POST['pass'];
+
+  $_SESSION["user"] = $_POST['nombre'];
+  $_SESSION["pass"] = $_POST['pass'];
+
+  $query = "SELECT * FROM empleados WHERE username='$nombre' and pass='$pass'";
+
+  $resultado = mysqli_query($con, $query) or die("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
+
+    if(mysqli_num_rows($resultado) > 0){
+
+  }else{
+    session_destroy();
+    header('Location: '."login.php");
+    exit;
+  }
+}
+
+?>
 
 <nav class=" mb-1 border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-gray-800">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -28,11 +58,6 @@
         </button>
 
         <div class="hidden my-4 text-base list-none  rounded divide-y  shadow bg-gray-700 divide-gray-600" id="dropdown">
-            <div class="seven py-3 px-4">
-                <span class="block text-sm  text-white"></span>
-                <span class="block text-sm font-medium truncate text-gray-400">BASE DE DATOS IMAIL</span>
-            </div>
-
             <ul class="py-1" aria-labelledby="dropdown">
                 <li>
                     <a href="profile.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Settings</a>
@@ -91,6 +116,5 @@
 <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
 
 <?php
-
-  include_once('footer.php');
+include_once('footer.php');
 ?> 

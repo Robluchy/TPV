@@ -5,20 +5,20 @@ include_once('conexion.php');
 ?>
 
 <div class="grid">
-<form class="bg-transparent w-2/4 mt-4 justify-self-center ">
+<form class="bg-transparent w-2/4 mt-4 justify-self-center " enctype="multipart/form-data" method="POST">
 
     <label for="small-input" class="block my-4 text-sm font-medium text-white dark:text-gray-300">Product ID</label>
-    <input type="text" id="disabled-input" id="small-input" class="mb-6 bg-gray-100 border border-gray-300 text-white text-sm rounded-lg  block w-full p-2.5 cursor-not-allowed dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-500 dark:text-gray-500 " value="ID" disabled>
+    <input type="text" id="disabled-input" id="small-input" class="mb-6 bg-gray-100 border border-gray-300 text-black text-sm rounded-lg  block w-full p-2.5 cursor-not-allowed dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-500 dark:text-gray-500 " value="ID" disabled>
 
 
     <label for="small-input" class="block my-4 text-sm font-medium text-white dark:text-gray-300">Name</label>
-    <input required  name="categoria"  type="text" id="small-input" class="block p-2 w-full text-white bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <input required  name="nombre"  type="text" id="small-input" class="block p-2 w-full text-black bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
 
     <label class="block my-4 text-sm font-medium text-white dark:text-gray-300" for="user_avatar">Upload image</label>
-    <input name="foto" class="block  w-full text-sm text-white bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+    <input name="uploadfile" class="block  w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
 
-    <button type="submit" class="text-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Submit</button>
+    <button name="send" type="submit" class="text-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Submit</button>
 
     <svg role="status" class="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-pink-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -31,13 +31,18 @@ include_once('conexion.php');
 
 <?php
 if (isset($_POST['send'])) {
-    define("destino","img/");
     
-    $categoria = $_POST['categoria'];
+    $filename = $_FILES["uploadfile"]["name"];
+    $folder = "img/".$filename;
+    
+    $nombre = $_POST['nombre'];
 
-
-    $query = "INSERT INTO categorias (nombre) VALUES ('$categoria')";
+    $query = "INSERT INTO categorias (nombre_categoria, foto) VALUES ('$nombre', '$folder')";
+    
     $resultado = mysqli_query($con, $query ) or die
+    
     ("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
+    
+    echo '<script>window.location = "categories.php";</script>';
 }
 ?>

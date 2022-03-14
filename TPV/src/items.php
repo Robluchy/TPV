@@ -14,7 +14,7 @@ $resultado = mysqli_query($con, $query) or die
 
 
 echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2'>"); 
-            // <<-div para poner las fotos de los productos asi separarlos en dos bloques->>
+           
     echo ('<div class="order-2 sm:order-1 w-4/6  justify-self-center grid grid-rows-5 grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 pt-10 mb-14 ">');
 
         while($rows = mysqli_fetch_array($resultado)){	
@@ -27,7 +27,7 @@ echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:gri
         }
 
     echo ("</div>");
-            // <<-div para las caracteristicas de los distintos productos->>
+   
     echo ("<div class='order-1 sm:order-2 pt-36 w-full justify-self-center'>");
 
         if(!isset($_GET["id"])) exit();
@@ -99,7 +99,7 @@ echo ("<section class='grid grid-cols-none  xl:grid-cols-2 lg:grid-cols-2 md:gri
 
         echo(' <div class="mt-4 inline-flex rounded-md shadow-sm pl-16 xl:pl-48 lg:pl-28 md:pl-12 sm:pl-6 ">
 
-        <a href="modifycat.php?id='.$detalle.'" class="rounded-l-lg py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
+        <a href="modifyp.php?id='.$detalle.'" class="rounded-l-lg py-2 px-4 text-sm bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 font-medium border">
             Modify
         </a>
 

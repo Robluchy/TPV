@@ -1,4 +1,5 @@
  <?php 
+ session_start();
  include_once('conexion.php');
  
 $query = "DELETE FROM categorias WHERE id_categoria =". $_GET['id'];

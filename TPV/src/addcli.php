@@ -5,24 +5,24 @@ include_once('conexion.php');
 ?>
 
 <div class="grid">
-<form class="bg-transparent w-2/4 mt-4 justify-self-center " method="POST">
+<form class="bg-transparent w-2/4 mt-4 justify-self-center " enctype="multipart/form-data" method="POST">
 
     <label for="small-input" class="block my-4 text-sm font-medium text-white dark:text-gray-300">Name</label>
-    <input type="text" required minlength="1" name="names" id="small-input" class="block p-2 w-full text-white bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <input type="text" required minlength="1" name="names" id="small-input" class="block p-2 w-full text-black bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
     <label for="small-input" class="block my-4 text-sm font-medium text-white dark:text-gray-300">Last name</label>
-    <input type="text" required minlength="1" name="last" id="small-input" class="block p-2 w-full text-white bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <input type="text" required minlength="1" name="last" id="small-input" class="block p-2 w-full text-black bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
     <label for="small-input" class="block my-4 text-sm font-medium text-white dark:text-gray-300">Telephone</label>
-    <input type="text" required minlength="1" name="telephone" pattern="[0-9]{1,5}" id="small-input" class="block p-2 w-full text-white bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <input type="text" required minlength="1" name="telephone" pattern="[0-9]{1,5}" id="small-input" class="block p-2 w-full text-black bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
     <label for="small-input" class="block my-4 text-sm font-medium text-white dark:text-gray-300">Address</label>
-    <input type="text" required minlength="1" name="address" id="small-input" class="block p-2 w-full text-white bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <input type="text" required minlength="1" name="address" id="small-input" class="block p-2 w-full text-black bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
     <label class="block my-4 text-sm font-medium text-white dark:text-gray-300" for="user_avatar">Upload image</label>
-    <input class="block w-full text-sm text-white bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+    <input name="uploadfile" class="block w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
 
-    <button type="submit" name="send" action="cliente.php" class="text-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Submit</button>
+    <button type="submit" onclick="window.location.href=cliente.php" name="send" action="cliente.php" class="text-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Submit</button>
     
     <svg role="status" class="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-pink-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -36,15 +36,24 @@ include_once('conexion.php');
 
 
 <?php
+
+
 if (isset($_POST['send'])) {
 
-    $names = $_POST['names'];
-    $last = $_POST['last'];
-    $telephone = $_POST['telephone'];
-    $address = $_POST['address'];
+    $names = $con -> real_escape_string($_POST['names']);
+    $last = $con -> real_escape_string($_POST['last']);
+    $telephone = $con -> real_escape_string($_POST['telephone']);
+    $address = $con -> real_escape_string($_POST['address']);
 
-    $query = "INSERT INTO clientes (nombre, apellido, telefono, direccion) VALUES ('$names', '$last', $telephone, '$address')";
+    $filename = $con -> real_escape_string($_FILES["uploadfile"]["name"]);
+    $folder = "img/".$filename;
+
+    $query = "INSERT INTO clientes (nombre, apellido, telefono, direccion, foto) VALUES ('$names', '$last', $telephone, '$address', '$folder')";
+    
     $resultado = mysqli_query($con, $query ) or die
     ("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
+
+    echo '<script>window.location = "cliente.php";</script>';
 }
 ?>
+

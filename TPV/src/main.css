@@ -790,6 +790,11 @@ input[type=file]::file-selector-button:hover {
   margin-bottom: 7rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -858,16 +863,20 @@ input[type=file]::file-selector-button:hover {
   margin-top: 0.5rem;
 }
 
-.ml-96 {
-  margin-left: 24rem;
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
-.mr-72 {
-  margin-right: 18rem;
+.mt-8 {
+  margin-top: 2rem;
 }
 
-.ml-72 {
-  margin-left: 18rem;
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mb-52 {
+  margin-bottom: 13rem;
 }
 
 .block {
@@ -928,6 +937,14 @@ input[type=file]::file-selector-button:hover {
 
 .h-4 {
   height: 1rem;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-32 {
+  height: 8rem;
 }
 
 .min-h-screen {
@@ -994,6 +1011,18 @@ input[type=file]::file-selector-button:hover {
   width: 75%;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
+.w-72 {
+  width: 18rem;
+}
+
+.w-2\/6 {
+  width: 33.333333%;
+}
+
 .min-w-full {
   min-width: 100%;
 }
@@ -1004,6 +1033,10 @@ input[type=file]::file-selector-button:hover {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .shrink-0 {
@@ -1172,6 +1205,10 @@ input[type=file]::file-selector-button:hover {
   border-radius: 9999px;
 }
 
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
 .rounded-l-lg {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -1217,6 +1254,26 @@ input[type=file]::file-selector-button:hover {
   border-top-width: 1px;
 }
 
+.border-t-4 {
+  border-top-width: 4px;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-l-0 {
+  border-left-width: 0px;
+}
+
+.border-r-0 {
+  border-right-width: 0px;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
 .border-double {
   border-style: double;
 }
@@ -1251,6 +1308,11 @@ input[type=file]::file-selector-button:hover {
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
+.border-gray-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -1263,6 +1325,11 @@ input[type=file]::file-selector-button:hover {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .bg-neutral-50 {
@@ -1303,6 +1370,16 @@ input[type=file]::file-selector-button:hover {
 .bg-blue-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+}
+
+.bg-indigo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(88 80 236 / var(--tw-bg-opacity));
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -1348,6 +1425,14 @@ input[type=file]::file-selector-button:hover {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .px-5 {
@@ -1455,12 +1540,8 @@ input[type=file]::file-selector-button:hover {
   padding-left: 4rem;
 }
 
-.pl-96 {
-  padding-left: 24rem;
-}
-
-.pl-24 {
-  padding-left: 6rem;
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .text-left {
@@ -1521,6 +1602,10 @@ input[type=file]::file-selector-button:hover {
   font-weight: 400;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -1537,6 +1622,10 @@ input[type=file]::file-selector-button:hover {
   letter-spacing: -0.025em;
 }
 
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
 .tracking-wider {
   letter-spacing: 0.05em;
 }
@@ -1544,6 +1633,11 @@ input[type=file]::file-selector-button:hover {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-gray-200 {
@@ -1581,9 +1675,9 @@ input[type=file]::file-selector-button:hover {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-black {
+.text-gray-100 {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .shadow-lg {
