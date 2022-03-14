@@ -63,7 +63,7 @@ if (!isset($_SESSION['user'])) {
                     <a href="profile.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Settings</a>
                 </li>
                 <li>
-                    <a href="./admin/index.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Administrator</a>
+                    <a href="administrator.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Administrator</a>
                 </li>
                 <li>
                     <a href="logout.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Sign out</a>

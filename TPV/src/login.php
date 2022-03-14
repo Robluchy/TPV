@@ -25,7 +25,7 @@
             <div class="mt-4">
                 <div>
                     <label class="block" for="email">Username<label>
-                            <input type="text" required minlength="1" name="nombre" placeholder="Email"
+                            <input type="text" required minlength="1" name="nombre" placeholder="Username"
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
                 <div class="mt-4">
