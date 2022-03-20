@@ -82,11 +82,13 @@ CREATE TABLE `compras` (
 
 CREATE TABLE `empleados` (
   `id_empleado` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `pass` varchar(90) NOT NULL,
   `admin` boolean DEFAULT NULL,
   `foto` varchar(1024) DEFAULT NULL,
+  `puesto` varchar(1024) DEFAULT NULL,
   `fecha_alta` date DEFAULT NULL,
   `fecha_baja` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -95,10 +97,10 @@ CREATE TABLE `empleados` (
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id_empleado`, `email`, `username`, `pass`, `admin`, `foto`, `fecha_alta`, `fecha_baja`) VALUES
-(1, 'admin@admin.com', 'admin', '123', true, 'img/tft.png', NULL, NULL),
-(2, 'dionny@gmail.com', 'dionny', '123', false, 'img/tft.png', NULL, NULL),
-(3, 'miguel@gmail.com', 'miguel', '123', false, 'img/tft.png', NULL, NULL);
+INSERT INTO `empleados` (`id_empleado`,`nombre`, `email`, `username`, `pass`, `admin`, `foto`,`puesto`,  `fecha_alta`, `fecha_baja`) VALUES
+(1, 'dionnys','admin@admin.com', 'admin', '123', true, 'img/tft.png','administrador', NULL, NULL),
+(2,'dionny', 'dionny@gmail.com', 'dionny', '123', false, 'img/tft.png','reponedor', NULL, NULL),
+(3, 'miguel','miguel@gmail.com', 'miguel', '123', false, 'img/tft.png', 'currito',NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -109,6 +111,7 @@ INSERT INTO `empleados` (`id_empleado`, `email`, `username`, `pass`, `admin`, `f
 CREATE TABLE `facturas` (
   `cantidad` int(200) NOT NULL,
   `total` int(200) NOT NULL,
+  `fecha` date,
   `producto` int(11) NOT NULL,
   `compra` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

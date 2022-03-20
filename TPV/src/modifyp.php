@@ -3,13 +3,16 @@
     include_once('header.php');
     include_once('conexion.php');
     
+if(isset($_GET["id"])){
 
     $query = "SELECT * FROM productos WHERE id_producto =". $_GET['id'];
-    
+
+ 
     $resultado = mysqli_query($con, $query ) or die
     ("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
     
-    
+    if(mysqli_num_rows($resultado) > 0){
+
     while($rows = mysqli_fetch_array($resultado)){	
     
     echo ('
@@ -43,21 +46,53 @@
 
     $resultado = mysqli_query($con, $query ) or die
     ("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
-?>
 
-<label for="countries" class="block my-4 text-sm font-medium text-white">Select Category</label><select id="countries" class="bg-gray-600 border border-gray-300 text-white text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white ">
 
-<?php 
+echo '<label for="countries" class="block my-4 text-sm font-medium text-white">Select Category</label><select id="countries" name="categoria" class="bg-gray-600 border border-gray-300 text-white text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white ">';
+
+
     while($rows = mysqli_fetch_array($resultado)){	
-    echo ('<option>'.$rows["nombre_categoria"].'</option>');
+    echo ('<option value='.$rows["categoria"].' >'.$rows["nombre_categoria"].'</option>');
 }
-?>
 
-</select>
-<button type="submit" name="send"  href="items.php" class="text-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Submit</button>
 
+echo '</select>
+<button type="submit" name="send"  href="items.php" class="text-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center ">Save</button>
+<a class="py-2 px-4 text-sm font-medium bg-neutral-50 border-slate-900 transition-all ease-in duration-75 hover:-translate-y-1 hover:scale-110 rounded-r-lg border" data-modal-toggle="popup-modal">
+            Remove
+        </a>
+            <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
+            <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+            
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            
+                    <div class="flex justify-end p-2">
+                        <button type="button" class="ttext-white font-medium rounded-lg text-sm w-2/4 sm:w-auto px-5 mt-10 border text-center " data-modal-toggle="popup-modal">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                        </button>
+                    </div>                 
+                    <div class="p-6 pt-0 text-center">
+                        <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
+                        <button data-modal-toggle="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800  font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                            <a href="removep.php?id='.$detalle.'">Yes</>
+                        </button>
+                        <button data-modal-toggle="popup-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
+                        <a href="items.php?id='.$detalle.'" > No, cancel </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
     </form>
-</div>
+</div>';
+    }
+
+}else{
+    echo 'error de id';
+    exit;
+  };
+?>
 
 
 <?php
@@ -69,9 +104,10 @@ if (isset($_POST['send'])) {
     $nombre = $_POST['nombre'];
     $cantidad = $_POST['cantidad'];
     $precio = $_POST['precio'];
+    $categoria = $_POST['categoria'];
     $descripcion = $_POST['descripcion'];
     
-    $query = "UPDATE productos SET nombre='$nombre', cantidad='$cantidad', descripcion='$descripcion', precio='$precio', foto='$folder' WHERE id_producto=". $_GET['id'];
+    $query = "UPDATE productos SET nombre='$nombre', cantidad='$cantidad', descripcion='$descripcion', precio='$precio', foto='$folder', categoria='$categoria' WHERE id_producto=". $_GET['id'];
    
     $resultado = mysqli_query($con, $query ) or die
     ("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));

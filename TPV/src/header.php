@@ -16,28 +16,29 @@
 </head>
 
 <body>
+
+
 <?php
 
 include_once("conexion.php");
 session_start();
 
-if (!isset($_SESSION['user'])) {
-
+if (!isset($_SESSION['admin'])) {
 
 
   $nombre = $_POST['nombre'];
 
   $pass = $_POST['pass'];
 
-  $_SESSION["user"] = $_POST['nombre'];
-  $_SESSION["pass"] = $_POST['pass'];
-
   $query = "SELECT * FROM empleados WHERE username='$nombre' and pass='$pass'";
 
   $resultado = mysqli_query($con, $query) or die("Algo ha ido mal en la consulta a la base de datos ". mysqli_error($con));
 
     if(mysqli_num_rows($resultado) > 0){
-
+        while($row=mysqli_fetch_array($resultado)){
+            if($row["admin"]) $_SESSION["admin"] = true;
+            else $_SESSION["admin"] = false;
+        }
   }else{
     session_destroy();
     header('Location: '."login.php");
@@ -62,9 +63,11 @@ if (!isset($_SESSION['user'])) {
                 <li>
                     <a href="profile.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Settings</a>
                 </li>
-                <li>
-                    <a href="administrator.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Administrator</a>
-                </li>
+                <?php
+                    if($_SESSION["admin"]) echo '<li>
+                        <a href="administrator.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Administrator</a>
+                    </li>';
+                ?>
                 <li>
                     <a href="logout.php" class="block py-2 px-4 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Sign out</a>
                 </li>
@@ -96,6 +99,11 @@ if (!isset($_SESSION['user'])) {
                     <li>
                         <a href="addcat.php" class="block py-2 px-4 text-sm text-white hover:bg-slate-600 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Add Category</a>
                     </li>
+                    <?php
+                    if($_SESSION["admin"]) echo '<li>
+                    <a href="addempleado.php" class="block py-2 px-4 text-sm text-white hover:bg-slate-600 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Add Enploye</a>
+                </li>';
+                ?>
                     <li>
                         <a href="addcli.php" class="block py-2 px-4 text-sm text-white hover:bg-slate-600 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Add Client</a>
                     </li>
